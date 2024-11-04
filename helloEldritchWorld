@@ -3,7 +3,6 @@ letters = ["H","E","L","O","W","R","D"]
 
 
 let_list = list()
-col_list = ["\033[0;37m","\033[0;36m","\033[0;35m"]
 eldritch = "HELLOWORLD"
 cap_list = ["up", "low"]
 pos = 0
@@ -24,7 +23,6 @@ else:
         elif caps == "low":
             let_list[k] = let_list[k].lower()
         
-        let_list[k] += random.choice(col_list)
 
     print(pos)
     print(let_list)
