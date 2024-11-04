@@ -1,20 +1,30 @@
 import random
-letters = ["H","E","l","O","W","R","L","D"]
+letters = ["H","E","L","O","W","R","D"]
 
 
 let_list = list()
 col_list = ["\033[0;37m","\033[0;36m","\033[0;35m"]
 eldritch = "HELLOWORLD"
+cap_list = ["up", "low"]
 pos = 0
 size = 0
 while size < 70:
     size = int(input("how cursed do you want it?\n it has to be 70 or above\n"))
 else:   
     for j in range(size):
-        let_list+= (f"{random.choice(col_list)} {random.choice(letters)}")
+        let_list+= random.choice(letters)
 
     pos = random.randint(20,size-50)
     let_list[pos:pos+10] = eldritch[0:10]
+
+    for k in range(len(let_list)):
+        caps = random.choice(cap_list)
+        if caps == "up":
+            let_list[k] = let_list[k].upper()
+        elif caps == "low":
+            let_list[k] = let_list[k].lower()
+        
+        let_list[k] += random.choice(col_list)
 
     print(pos)
     print(let_list)
